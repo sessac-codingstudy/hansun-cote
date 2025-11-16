@@ -1,0 +1,13 @@
+arr =[]
+for _ in range(10) :
+    arr.append(int(input()))
+
+    var_3 = 0
+    var_5 = 0
+    for i in arr :
+        if(i%3 == 0) :
+	        var_3 += 1
+		    if(i%5 == 0) :
+		            var_5 += 1 
+
+			    print(var_3,var_5)
