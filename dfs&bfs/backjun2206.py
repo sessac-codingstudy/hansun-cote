@@ -1,4 +1,4 @@
-백준 2206
+#백준 2206
 
 import sys 
 from collections import deque 

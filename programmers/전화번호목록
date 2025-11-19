@@ -1,0 +1,12 @@
+def solution(phone_book):
+    phone_dict = set(phone_book)  # set 사용이 핵심
+
+    for number in phone_book:
+        prefix = ""
+        for c in number:
+            prefix += c
+            if prefix in phone_dict and prefix != number:
+                return False
+
+    return True
+
