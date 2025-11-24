@@ -1,20 +1,14 @@
-import sys
-
 n = int(input())
+arr = [tuple(map(int, input().split())) for _ in range(n)]
 
-endPoint: int = 0
-answer: int = 0
+arr.sort(key=lambda x: (x[1], x[0]))  # 종료시간 기준 정렬
 
-arr = []
+count = 0
+last_end = 0
 
-for i in range(0,n):
-        a, b = map(int,sys.stdin.readline().rstrip().split())
-            arr.append([a,b])
+for s, e in arr:
+    if s >= last_end:
+        count += 1
+        last_end = e
 
-            arr.sort(key=lambda x: (x[1], x[0]))
-
-            for newStart, newEnd in arr:
-                    if endPoint <= newStart:
-                                answer += 1
-                                        endPoint = newEnd
-                                        print(answer)
+print(count)
