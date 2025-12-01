@@ -1,8 +1,11 @@
-def f(n):
-    s = 0
-    for i in range(0, n, 2):
-        for j in range(0, i, 2):
-            s += i + j
-    return s
+def Lee(x):
+    trigger = 10
+    while x:
+        if x % 10 > trigger:
+            return 0
+        trigger = x % 10
+        x //= 10
+    return 1
+
 
 print(f(10))
