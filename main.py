@@ -3,13 +3,26 @@ import math
 
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
-count = 0
-answer = 0
-for i in range(1, n + 1):
-    if n % i == 0:
-        count += 1
-        if count == m:
-            answer = i
-            break
-print(answer)
+while True:
+    temp = list(map(int, input().split()))
+    if temp[0] == 0:
+        break
+    answer_list = []
+    nums = temp[1:]
+
+    def nCr(n, ans, r):
+        if n == len(nums):
+            if len(ans) == r:
+                temp = [i for i in ans]
+                answer_list.append(temp)
+            return
+        ans.append(nums[n])
+        nCr(n + 1, ans, r)
+        ans.pop()
+        nCr(n + 1, ans, r)
+
+    nCr(0, [], 6)
+
+    for a in answer_list:
+        print(a)
+    print()
