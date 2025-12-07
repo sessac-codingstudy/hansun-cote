@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 tc = int(input())
 
 for _ in range(tc) :
@@ -14,4 +17,3 @@ for _ in range(tc) :
     for k,v in cloths_dict.items() : 
         temp *= len(v)+1 
     print(temp - 1)
-
