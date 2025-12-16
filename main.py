@@ -2,22 +2,18 @@ import sys
 
 input = sys.stdin.readline
 
-n = int(input())
+def check_palindrom(word) : 
+    length = len(word)
+    for i in range(length//2+1) :
+        if(word[i] != word[length-i]) :
+            return False 
+    
+    return True 
 
-arr = list(map(int,input().split()))
-
-idx = n - 1
-check = False
-for i in range(n-1, 0, -1) :
-    f = arr[i-1]
-    b = arr[i] 
-    if(f > b) :
-        arr[i-1], arr[i] = arr[i], arr[i-1]
-        check = True 
+while(True) : 
+    word = input()
+    
+    if(word == '0') :
         break 
 
-if(check) :
-    print(' '.join(str(a) for a in arr))
-else : 
-    print(-1) 
-
+    print(check_palindrom(word))
