@@ -2,8 +2,10 @@ import sys
 input = sys.stdin.readline 
 
 n,m = map(int,input().split())
+
 song_dict = {}
 test_case = []
+
 for _ in range(n) : 
     song_info = list(map(int,input().split()))
     string = song_info[2]+song_info[3]+song_info[4] 
